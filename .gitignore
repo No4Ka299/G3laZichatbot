@@ -1,33 +1,72 @@
 ```
-# Artifacts directory
-artifacts/
-
 # Dependencies
 node_modules/
-.pnpm-store/
-.yarn/
-yarn.lock
+
+# Build artifacts
+dist/
+build/
+*.o
+*.obj
+*.out
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.venv-*/
+.python-version
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
 
 # Logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Environment
+# Environment variables
 .env
 .env.local
 .env.*
+!.env.example
 
-# Editor
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.DS_Store
+Thumbs.db
 
-# Build outputs
-dist/
-build/
-target/
-out/
-coverage/
-htmlcov/
-.nyc_output/
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db:encryptable
+```
+
+Wait, let me reconsider this. Looking at the modified files, they are all TypeScript source files in a Drizzle project. There are no build artifacts, dependency directories, or temporary files in the change list. The files being modified are:
+
+- `drizzle.config.ts` - configuration file
+- `lib/db/helpers/01-core-to-parts.ts` - TypeScript source file
+- `lib/db/migrate.ts` - TypeScript source file  
+- `lib/db/queries.ts` - TypeScript source file
+
+Since these are all source code files and there are no build artifacts, dependency directories, or temporary files in the changes, the .gitignore should remain empty.
+
+```
+
 ```
